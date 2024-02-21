@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class demonstration</title>
+</head>
+<body>
+<h1>Class demonstration</h1>
+
+<script>
+class Student{ constructor(name,ID,dob){
+this.name=name; this.ID=ID; this.dob=dob;
+}
+getDetails(){
+return "Name: "+this.name+" ID: "+this.ID+" Date of birth:
+"+this.dob;
+}
+getAge(){
+var today=new Date();
+var birthDate=new Date(this.dob);
+var age=today.getFullYear()-birthDate.getFullYear(); var m=today.getMonth()-birthDate.getMonth();
+if(m<0 || (m===0 && today.getDate()<birthDate.getDate())){ age--;
+}
+return "The age of student is "+age;
+}
+}
+let p1=new Student("John","21IT013","19-01-2004"); 
+document.write(p1.getDetails()+"<br>"+p1.getAge()+"<br>"); 
+
+</script>
+</body>
+</html>
